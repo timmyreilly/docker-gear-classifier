@@ -102,7 +102,6 @@ def what_is_it(url):
     classifier = load_model('my_model.h5')
 
     result = classifier.predict(test_image)
-    training_set.class_indices
     print(result, cato[result.argmax()])
     return cato[result.argmax()]
 
