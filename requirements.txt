@@ -6,3 +6,4 @@ matplotlib==2.2.2
 scipy==1.1.0
 requests==2.18.4
 keras==2.1.4
+cntk-gpu==2.5.1
