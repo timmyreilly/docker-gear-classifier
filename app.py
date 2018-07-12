@@ -97,7 +97,8 @@ def classify():
         prcedImg = processImage(img)
 
         # Convert a 2D image into a flat array
-        imgFeatures = np.array(prcedImg).ravel().reshape(1,-1)
+        # imgFeatures = np.array(prcedImg).ravel().reshape(1,-1)
+        imgFeatures = np.array(prcedImg)
         print(imgFeatures)
 
         # model   = joblib.load('pickle_model.pkl')
