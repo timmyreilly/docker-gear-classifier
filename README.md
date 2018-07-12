@@ -205,3 +205,5 @@ az container delete --name dv-flask-container --resource-group dv-containers-rgt
 
 create conda environment: 
 $ conda create -n mythreefive python=3.5
+
+
