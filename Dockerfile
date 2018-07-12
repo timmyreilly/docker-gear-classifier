@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.5
 RUN apt-get update -y
 RUN apt-get install -y python-pip python-dev build-essential
 RUN apt-get install openmpi-bin -y 
