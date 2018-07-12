@@ -100,7 +100,8 @@ def classify():
         imgFeatures = np.array(prcedImg).ravel().reshape(1,-1)
         print(imgFeatures)
 
-        model   = joblib.load('pickle_model.pkl')
+        # model   = joblib.load('pickle_model.pkl')
+        model = load_model('my_model.h5')
         predict = model.predict(imgFeatures)
         print('The image is a ', namemap[int(predict[0])]),
         
