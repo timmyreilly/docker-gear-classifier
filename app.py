@@ -25,6 +25,8 @@ namemap = [
     'rope',
     'tents'
 ]
+cato = {0: 'axes', 1: 'boots', 2: 'carabiners', 3: 'crampons', 4: 'gloves', 5: 'hardshell_jackets', 6: 'harnesses', 7: 'helmets', 8: 'insulated_jackets', 9: 'pulleys', 10: 'rope', 11: 'tents'}
+
 app = Flask(__name__)
 
 
@@ -79,6 +81,40 @@ def processImage(image):
     new_img = Image.fromarray(normalize(arr).astype('uint8'),'RGB')
     
     return new_img
+
+def what_is_it(url):
+    global Image
+    testImageUrl=url
+    response = requests.get(testImageUrl)
+    testImage = Image.open(BytesIO(response.content))
+
+    from PIL import Image
+    r = requests.get(testImageUrl)
+    b = BytesIO(r.content)
+
+    test_image = image.load_img(b, target_size = (64, 64))
+    test_image = image.img_to_array(test_image)
+    test_image = np.expand_dims(test_image, axis = 0)
+
+    result = classifier.predict(test_image)
+    training_set.class_indices
+    print(result, cato[result.argmax()])
+    return cato[result.argmax()]
+
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    try: 
+        body = request.get_json()
+        img_url = body["url"]
+
+        prediction = what_is_it(img_url)
+        print(prediction)
+        response = json.dumps({"classification":prediction})
+        return response
+    except Exception as e:
+        print(e) 
+        raise 
 
 
 @app.route('/classify', methods=['POST'])
