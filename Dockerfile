@@ -1,5 +1,6 @@
-FROM python:3.5
-RUN apt-get update -y
+# FROM python:3.5
+FROM microsoft/cntk:2.5.1-gpu-python3.5-cuda9.0-cudnn7.0
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 RUN apt-get install -y python-pip python-dev build-essential
 
 # RUN apt-get install -y openmpi-bin
