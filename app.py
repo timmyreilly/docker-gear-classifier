@@ -10,6 +10,8 @@ import requests
 from keras.models import load_model
 from keras.preprocessing import image
 from keras import backend as K
+import os
+from importlib import reload
 
 
 # These are the possible categories (classes) which can be detected
