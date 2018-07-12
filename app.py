@@ -31,6 +31,12 @@ cato = {0: 'axes', 1: 'boots', 2: 'carabiners', 3: 'crampons', 4: 'gloves', 5: '
 
 app = Flask(__name__)
 
+def set_keras_backend(backend):
+    if K.backend() != backend: 
+        os.environ['KERAS_BACKEND'] = backend
+        reload(K)
+        assert K.backend() == backend
+        
 
 def resize(image):
     """ Resize any image to 128 x 128, which is what the model has been trained on """
@@ -160,4 +166,5 @@ def classify():
 
 
 if __name__ == '__main__':
+    set_keras_backend("cntk")
     app.run(debug=True, host='0.0.0.0')
