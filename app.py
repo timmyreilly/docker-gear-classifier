@@ -7,6 +7,8 @@ import json
 import pickle
 import numpy as np
 import requests
+from keras.models import load_model
+
 
 # These are the possible categories (classes) which can be detected
 namemap = [
