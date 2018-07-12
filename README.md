@@ -207,3 +207,5 @@ create conda environment:
 $ conda create -n mythreefive python=3.5
 
 
+sudo docker run --runtime=nvidia bf43a44a2fbe
+
