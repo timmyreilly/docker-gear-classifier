@@ -199,3 +199,9 @@ curl -X POST \
 ```
 az container delete --name dv-flask-container --resource-group dv-containers-rgt
 ```
+
+
+### NOTES:
+
+create conda environment: 
+$ conda create -n mythreesix python=3.6
