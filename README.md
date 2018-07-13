@@ -209,3 +209,4 @@ $ conda create -n mythreefive python=3.5
 
 sudo docker run --runtime=nvidia bf43a44a2fbe
 
+https://www.born2data.com/2017/deeplearning_install-part4.html 
