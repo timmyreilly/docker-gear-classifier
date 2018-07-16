@@ -170,3 +170,7 @@ COPY . /app
 WORKDIR /app
 ENTRYPOINT ["python"]
 CMD ["app.py"]
+
+
+# Run this sucker: 
+# sudo docker run -d -p 5000:5000 timmyreilly/docker-
