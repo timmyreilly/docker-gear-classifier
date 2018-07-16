@@ -210,3 +210,9 @@ $ conda create -n mythreefive python=3.5
 sudo docker run --runtime=nvidia bf43a44a2fbe
 
 https://www.born2data.com/2017/deeplearning_install-part4.html 
+
+
+
+nvidia-docker run -it --expose=5000 -p 5000:5000 --name dockerhosttwo f2208154f056 bash
+
+nvidia-docker run --rm ufoym/deepo nvidia-smi
