@@ -216,3 +216,13 @@ https://www.born2data.com/2017/deeplearning_install-part4.html
 nvidia-docker run -it --expose=5000 -p 5000:5000 --name dockerhosttwo f2208154f056 bash
 
 nvidia-docker run --rm ufoym/deepo nvidia-smi
+
+
+
+BUILD:
+
+$ sudo docker build -t timmyreilly/docker-gear-classifier:latest .
+
+RUN: 
+
+$ sudo nvidia-docker run -d -p 5000:5000 timmyreilly/docker-gear-classifier
