@@ -151,8 +151,8 @@ def classify():
         imgFeatures = np.expand_dims(imgFeatures, axis=0)
         print(imgFeatures)
 
-        # model   = joblib.load('pickle_model.pkl')
-        model = load_model('my_model.h5')
+        model   = joblib.load('pickle_model.pkl')
+        # model = load_model('my_model.h5')
         predict = model.predict(imgFeatures)
         print('The image is a ', namemap[int(predict[0])]),
 

@@ -226,3 +226,6 @@ $ sudo docker build -t timmyreilly/docker-gear-classifier:latest .
 RUN: 
 
 $ sudo nvidia-docker run -d -p 5000:5000 timmyreilly/docker-gear-classifier
+
+$ nvidia-docker run -it f2208154f056 bash
+
